@@ -1,0 +1,29 @@
+$sprimary: #0EA5E9;
+$success:  #22C55E;
+$warning:  #F59E0B;
+
+
+
+button{
+    outline: none;
+    border: none;
+    width:388 px;
+    height: 56px;
+    background-color: $sprimary;
+    text-align: center;
+    font-family: "inter",sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    font-style: medium;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: white;
+    border-radius: 12px;
+    &.success{
+     background-color: $success;
+    }
+    &.warm{
+    background-color: $worm;
+    }
+
+}
