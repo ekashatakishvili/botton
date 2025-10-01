@@ -1,5 +1,7 @@
-<button [class]="buttoncolortype(
-    
-)">
+<button [class]="buttonColorType()">
+   @if(isloading()){
+      loading...
+   } @else{
    <ng-content></ng-content>
+   }
 </button> 

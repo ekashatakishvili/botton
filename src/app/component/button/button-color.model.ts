@@ -1,1 +1,1 @@
-export type buttoncolor='success'|'primary'|'warm'
+export type ButtonColor = 'success'|'primary'|'warm';

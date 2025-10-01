@@ -3,11 +3,24 @@
    primary default
 </app-button>
 
-<app-button buttoncolortype="Success">
+<app-button  buttonColorType="success">
    Success Default
 </app-button>
 
-<app-button buttoncolortype="Warm">
+<app-button  buttonColorType="warm">
+   Warning Default
+</app-button>
+</div>
+<div class="row">
+<app-button [isloading]="true">
+   primary default
+</app-button>
+
+<app-button [isloading]="true" buttonColorType="success">
+   Success Default
+</app-button>
+
+<app-button [isloading]="true" buttonColorType="warm">
    Warning Default
 </app-button>
 </div>
