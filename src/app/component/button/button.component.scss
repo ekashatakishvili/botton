@@ -20,7 +20,7 @@ $warning-hover-shadow:#F59E0B4D;
 button{
     outline: none;
     border: none;
-    width:388 px;
+    width:388px;
     height: 56px;
     background-color: $sprimary;
     text-align: center;
@@ -32,14 +32,18 @@ button{
     letter-spacing: 0%;
     color: white;
     border-radius: 12px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition:all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition:all 0.3s ease-in-out;
     
+    &:not(.loadingclass) {
     &:hover{
         transform: scale(1.1);
         cursor: pointer;
         background-color: $sprimary-hover;
-        @include box-shadow(#0284C7,)
-      
-       
+        @include box-shadow($sprimary-hover-shadow);  
     }
     
     
@@ -49,12 +53,15 @@ button{
     @include box-shadow($success-hover-shadow)}
     }
 
-    &.warm{
+     &.warm{
       background-color: $warning;  
       &:hover{
-        background-color: $warning-hover;
+      background-color: $warning-hover;
     @include box-shadow($warning-hover-shadow);
-}
+    }
   }
 
 }
+
+}
+    
