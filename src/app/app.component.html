@@ -14,7 +14,7 @@
 
 <div class="row">
 <app-button [isLoading]="true">
-   primary default
+   Primary Hovered
 </app-button>
 
 <app-button [isLoading]="true"buttonColorType="success">
@@ -22,7 +22,7 @@
 </app-button>
 
 <app-button [isLoading]="true"buttonColorType="warm">
-   Warning Default
+   Warning Hovered
 </app-button>
 </div>
 
@@ -56,3 +56,63 @@
 
 </div>
 
+<div class="row">
+<app-button [isLoading]="true"size="small">
+   primary default
+</app-button>
+
+<app-button [isLoading]="true"[isDisabled]="true"buttonColorType="success">
+   Success Default
+</app-button>
+
+<app-button [isLoading]="true"[isDisabled]="true" buttonColorType="warm">
+   Warning Default
+</app-button>
+</div>
+<div class="row">
+<app-button buttonColorType="success" size="small">
+Small Success
+</app-button>
+
+<!-- Small size -->
+<app-button buttonColorType="primary" size="small">
+  Small Primary
+</app-button>
+
+<!-- Large size -->
+<app-button buttonColorType="warm" size="small">
+  Small Warning
+</app-button>
+</div>
+
+<div class="row">
+<app-button buttonColorType="success" size="medium">
+medium Success
+</app-button>
+
+<!-- Small size -->
+<app-button buttonColorType="primary" size="medium">
+  medium Primary
+</app-button>
+
+<!-- Large size -->
+<app-button buttonColorType="warm" size="medium">
+  medium Warning
+</app-button>
+</div>
+
+<div class="row">
+<app-button buttonColorType="success" size="large">
+large Success
+</app-button>
+
+<!-- Small size -->
+<app-button buttonColorType="primary" size="large">
+  large Primary
+</app-button>
+
+<!-- Large size -->
+<app-button buttonColorType="warm" size="large">
+  large Warning
+</app-button>
+</div>

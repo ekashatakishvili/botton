@@ -1,11 +1,16 @@
-<button [class]="buttonColorType()"
- [ngClass]="{'loadingclass': isLoading()}"
- [disabled]= "isDisabled()">
- @if (isLoading()){
- loading...
-  } @else{
- <ng-content></ng-content>
-  }
 
-  </button>
+  <button [class]="buttonColorType()"
+        [ngClass]="{
+          'loadingclass': isLoading(),
+          'small': size() === 'small',
+          'medium': size() === 'medium',
+          'larg': size() === 'large'
+        }"
+        [disabled]="isDisabled()">
+  @if (isLoading()) {
+    loading...
+  } @else {
+    <ng-content></ng-content>
+  }
+</button>
   

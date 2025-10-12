@@ -1,95 +1,107 @@
-$sprimary: #0EA5E9;
-$sprimary-hover:#0284C7;
-$sprimary-hover-shadow:rgba(14, 165, 233, 0.3);
+// ცვლადები
+$primary: #0EA5E9;
+$primary-hover: #0284C7;
+$primary-shadow: rgba(14, 165, 233, 0.3);
+
 $success: #22C55E;
-$success-hover:#16A34A;
-$success-hover-shadow:#22C55E4D;
-$warning:#F59E0B;
-$warning-hover:rgba(217, 119, 6, 1);
-$warning-hover-shadow:#F59E0B4D;
-$disabled:#CBD5E1;
-$disabled-text:#64748B;
-$disabled-background:#CBD5E1;
+$success-hover: #16A34A;
+$success-shadow: rgba(34, 197, 94, 0.3);
 
+$warning: #F59E0B;
+$warning-hover: #D97706;
+$warning-shadow: rgba(245, 158, 11, 0.3);
 
+$disabled-bg: #CBD5E1;
+$disabled-text: #64748B;
 
-
-
-
-
-@mixin box-shadow($color){
+// Mixin
+@mixin box-shadow($color) {
   box-shadow: 0 20px 25px 0 $color, 0 8px 10px 0 $color;
 }
-button{
-    outline: none;
-    border: none;
-    width:388px;
-    height: 56px;
-    background-color: $sprimary;
-    text-align: center;
-    font-family: "inter",sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    font-style: medium;
-    line-height: 100%;
-    letter-spacing: 0%;
-    color: white;
-    border-radius: 12px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition:all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition:all 0.3s ease-in-out;
-    
-    &:not(.loadingclass):not(.disabled) {
-    &:hover{
-        transform: scale(1.1);
-        cursor: pointer;
-        background-color: $sprimary-hover;
-        @include box-shadow($sprimary-hover-shadow);  
-    }
-    
-    
-    &.success{
-     background-color: $success;
-     &:hover{ background-color: $success-hover;
-    @include box-shadow($success-hover-shadow)}
-    }
 
-     &.warm{
-      background-color: $warning;  
-      &:hover{
-      background-color: $warning-hover;
-    @include box-shadow($warning-hover-shadow);
+// ძირითადი button
+button {
+  outline: none;
+  border: none;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 100%;
+  color: white;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  
+  // Default size (medium)
+  width: 388px;
+  height: 56px;
+  font-size: 16px;
+  
+  // Default color (primary)
+  background-color: $primary;
+  
+  // Primary hover
+  &:not(.loadingclass):not(:disabled):hover {
+    transform: scale(1.05);
+    background-color: $primary-hover;
+    @include box-shadow($primary-shadow);
+  }
+  
+  // Success color
+  &.success {
+    background-color: $success;
+    
+    &:not(.loadingclass):not(:disabled):hover {
+      background-color: $success-hover;
+      @include box-shadow($success-shadow);
     }
-   &.disabled{
-    background-color: $disabled-background;
+  }
+  
+  // Warning color
+  &.warm {
+    background-color: $warning;
+    
+    &:not(.loadingclass):not(:disabled):hover {
+      background-color: $warning-hover;
+      @include box-shadow($warning-shadow);
+    }
+  }
+  
+  // Disabled state
+  &:disabled {
+    background-color: $disabled-bg;
     color: $disabled-text;
-    }
-    }
-
-    }
-&.warm {
-      background-color: $warning;  
-      &:hover{
-      background-color: $warning-hover;
-    @include box-shadow($warning-hover-shadow);
-}
-
-} 
-
- &.success {
-     background-color: $success;
-     &:hover{ background-color: $success-hover;
-    @include box-shadow($success-hover-shadow)}
-    }
-    }
-  .button {
-    &.sprimary {
-    background-color: $sprimary;
-     &:hover{ 
-      background-color:$sprimary-hover;
-    @include box-shadow($sprimary-hover-shadow);
- }
- }  
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+  
+  // Loading state
+  &.loadingclass {
+    cursor: wait;
+    opacity: 0.8;
+  }
+  
+  // Size variants
+  &.small {
+    width: 124px;
+    height: 36px;
+    font-size: 14px;
+    top: 44px;
+  }
+  
+  &.medium {
+    width: 173px;
+    height: 48px;
+    font-size: 16px;
+    top: 112px;
+  }
+  
+  &.larg {
+    width: 184px;
+    height: 60px;
+    font-size: 18px;
+    top:223px;
+  }
+  
 }
