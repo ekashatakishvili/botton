@@ -5,11 +5,14 @@ import { ButtonColor } from './button-color.model';
 
 @Component({
   selector: 'app-button',
+  standalone: true, 
   imports: [NgClass],
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-public buttonColorType=input<ButtonColor>('primary')
-public isLoading=input<boolean>();
+public buttonColorType = input<ButtonColor>('primary');
+public isLoading=input<boolean>(false);
+public isDisabled=input<boolean>(false);
 }
+
